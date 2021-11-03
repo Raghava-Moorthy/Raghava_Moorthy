@@ -1,0 +1,52 @@
+<!--testimonial-->
+  <div class="testimonial">
+      <div class="small-container">
+          <div class="row">
+              <div class="col-3">
+                  <p><i class="fas fa-quote-left"></i>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio molestiae quo iure, dolore possimus dolores, enim ut harum aliquid. Debitis dignissimos, libero enim incidunt numquam dolor? Id nihil eius necessitatibus.
+                  </p>
+                  <div class="ratings">
+                 <i class="fa fa-star"></i>
+                 <i class="fa fa-star"></i>
+                 <i class="fa fa-star"></i>
+                 <i class="fa fa-star"></i>
+                 <i class="fa fa-star"></i>
+              </div>
+              <img src="Images/red bubble/The-Best-Skincare-Routine_OI.jpg">
+              <h3>Sen parker</h3>
+              </div>
+              <div class="col-3">
+                  <p><i class="fas fa-quote-left"></i>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio molestiae quo iure, dolore possimus dolores, enim ut harum aliquid. Debitis dignissimos, libero enim incidunt numquam dolor? Id nihil eius necessitatibus.
+                  </p>
+                  <div class="ratings">
+                 <i class="fa fa-star"></i>
+                 <i class="fa fa-star"></i>
+                 <i class="fa fa-star"></i>
+                 <i class="fa fa-star"></i>
+                 <i class="fa fa-star"></i>
+              </div>
+              <img src="Images/red bubble/rr.jpg">
+              <h3>Luke harper</h3>
+              </div>
+              <div class="col-3">
+                  <p><i class="fas fa-quote-left"></i>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio molestiae quo iure, dolore possimus dolores, enim ut harum aliquid. Debitis dignissimos, libero enim incidunt numquam dolor? Id nihil eius necessitatibus.
+                  </p>
+                  <div class="ratings">
+                 <i class="fa fa-star"></i>
+                 <i class="fa fa-star"></i>
+                 <i class="fa fa-star"></i>
+                 <i class="fa fa-star"></i>
+                 <i class="fa fa-star"></i>
+              </div>
+              <img src="Images/01-1553584441.jpg">
+              <h3>Rajini</h3>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  
+  
