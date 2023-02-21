@@ -1,0 +1,24 @@
+*	locate to updation folder <path>	in cmd
+
+*	clone your git to the updation folder 
+
+*	paste the upadting folder to the git folder
+
+*	locate to the git folder
+	
+	#Not compulsory
+	$	git checkout <branchName>	(To change branch path)
+	$
+	#
+
+*	git status 	(To see not updated folder in red color)
+
+*	git add .	(To add all folder  <to update>  )	
+
+*	git status   (To see the updating files at green color to <push> to github)
+
+*	git commit -m <any commitment to upload>	(Commitment within double quotes)
+
+*	git push	(To push all the files to github)
+
+*	git status	(Your branch is up to date with <branchName>)#Message that you will successfully upload you files to the github)
