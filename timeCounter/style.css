@@ -1,0 +1,33 @@
+*{
+    margin:0;
+    padding:0;
+}
+:root{
+    --border:#6600cc;
+    --grey:#575757;
+    --width:200px;
+    
+}
+.body{
+    width: 500px;;
+}
+.count{
+    overflow: hidden;
+    margin:10%;
+    line-height: 2;
+    width:var(--width);
+    border:2px solid var(--border);
+    border-radius:10% 25% 10% 25%;
+    box-shadow:3px 3px var(--grey);
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    animation: counting 1s infinite linear;
+}
+ul{
+    width: var(--width);
+}
+li{
+    padding-left: 10%;
+    display: inline;
+    list-style: none;
+}

@@ -1,0 +1,26 @@
+ *{
+    margin: 0;
+    padding: 0;
+ }
+html {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, #fff 0%, #aaa 100%) no-repeat;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+body {
+    text-align: center;
+    display: table;
+    background: #b4b4b4;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+canvas {
+    display:block;
+}
+
+
+
