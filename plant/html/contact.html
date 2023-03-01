@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!--=============== FAVICON ===============-->
+     <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon">
+
+     <!--=============== REMIX ICONS ===============-->
+     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+     <!--=============== CSS ===============-->
+     <link rel="stylesheet" href="../assets/css/styles.css">
+     <title>Heritagex</title>
+    </head>
+    <body>
+        
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="index.html" class="nav__logo" title="Top of the page">
+                    <i class="ri-leaf-line nav__logo-icon"></i> <h3 id="logo">Heritagex</h3>
+            </a>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link ">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="about.html" class="nav__link">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="../db/databaseconnection/reglog.html" class="nav__link">Products</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="faqs.html" class="nav__link">FAQs</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="contact.html" class="nav__link active-link">Reach Us</a>
+                    </li>
+                </ul>
+                
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+            
+            <div class="nav__btns">
+                <!-- Theme change button -->
+                <i class="ri-moon-line change-theme" id="theme-button"></i>
+                
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="contact section container" id="contact">                
+        <div class="contact__container grid">
+            <div class="contact__box">
+                <h2 class="section__title">
+                    Reach out to us today <br> via any of the given <br> information
+                </h2>
+                
+                <div class="contact__data">
+                    <div class="contact__information">
+                        <h3 class="contact__subtitle">Call us for instant support</h3>
+                        <span class="contact__description">
+                            <i class="ri-phone-line contact__icon"></i>
+                            +91 93604 81548
+                        </span>
+                    </div>
+                    
+                    <div class="contact__information">
+                        <h3 class="contact__subtitle">Write us by mail</h3>
+                        <span class="contact__description">
+                            <i class="ri-mail-line contact__icon"></i>
+                            user@email.com
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <form action="../db/databaseconnection/contact.php" class="contact__form" method="post">
+                <div class="contact__inputs">
+                    <div class="contact__content">
+                        <input type="email" placeholder=" " name="email" class="contact__input">
+                        <label for="email" class="contact__label">Email</label>
+                    </div>
+                    
+                    <div class="contact__content">
+                        <input type="text" placeholder=" " name="subject" class="contact__input">
+                        <label for="subject" class="contact__label">Subject</label>
+                    </div>
+                    
+                    <div class="contact__content contact__area">
+                        <textarea name="message" placeholder=" " name="message" class="contact__input"></textarea>                              
+                        <label for="message" class="contact__label">Message</label>
+                    </div>
+                </div>
+                
+                <button class="button button--flex" onclick="msgc()">
+                    Send Message
+                    <i class="ri-arrow-right-up-line button__icon"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+    
+    <!--==================== FOOTER ====================-->
+    
+    <link rel="stylesheet" href="footer.html">
+</body>
+</html>

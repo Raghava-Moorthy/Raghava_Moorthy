@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon">
+       
+        
+    <!-- Tamil Font -->
+     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+    
+    
+    
+     <!--=============== REMIX ICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+
+    <title>Buy Me</title>
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav__logo" title="Top of the page">
+                <i class="ri-leaf-line nav__logo-icon"></i> <h3 id="logo">Heritagex</h3>
+            </a>
+
+
+
+            <div class="nav__menu " id="nav-menu">
+                <ul class="nav__list prd1">
+                
+                    <li class="nav__item">
+                        <a href="../db/databaseconnection/reglog.html" class="nav__link active-link ">Products</a>
+                    </li>
+                   
+                </ul>
+
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+            
+            <div class="nav__btns">
+                <!-- Theme change button -->
+                <i class="ri-moon-line change-theme theme1" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line"></i>
+                </div>
+            </div>
+            
+        </nav>
+    </header>
+
+
+    <main>
+        <div class="container">
+         <div class="buyme">
+
+
+            <div class="androimg">
+                <img src="../assets/img/andro.png" alt="Andrographis" title="நிலவேம்பு" class="eighteenthimg">
+                <div class="namediv">
+                    <h2 class="name18">Andrographis</h2>
+                    <h4 class="rupees18">&#8377;999</h4>
+                   
+                </div>
+            </div>
+             
+                <div class="disc">
+                    <h2 class="description16"> </h2>
+                    <p class="buydesc">
+                      <b>You will receive the plant within 25 days. </b>
+
+                    </b> 
+                    </p>
+                </div>
+                <form action="../db/databaseconnection/buy18.php" method="post">
+
+                <div class="info">
+                     
+                    <h4 for="fullname" class="fullname" name="fullname">Enter Your Name &nbsp;
+                        <input type="text/letter" class="fnam" name="fullname" placeholder="Enter Your Name"></h4> <br>
+                       
+                        <h4 for="address" class="adrs" name="address">Enter Your Delivery Address &nbsp;
+                        <input type="text/letter" class="addrus" name="address" placeholder="Enter Your Address"></h4>  <br>
+                            
+                        <h4 for="state" class="sts" name="state">Enter Your State &nbsp;
+                        <input type="text/letter" class="stsa" name="state" placeholder="Enter Your State"></h4>  <br>
+        
+                        <h4 for="pincode" class="picde" name="pincode">Enter Your City Pincode &nbsp;
+                        <input  type="text/letter" class="pincde" name="pincode" placeholder="Enter Your Pincode"></h4>  <br>
+                           
+                        <h4 for="mobile" class="mobile" name="mobile">Enter Your Mobile number &nbsp;
+                        <input type="text/letter" class="mbnum" name="mobile" placeholder="Enter Your Mobile No"></h4><br>
+                       
+                        <h4 for="email" class="emaail" name="email">Enter Your Email &nbsp;
+                        <input type="text/letter" class="emil" name="email" placeholder="Enter Your Email"></h4><br>
+    
+                   
+                        <input type="submit" onclick="submitted()" class="btn btn-primary submit"/>
+                </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+    <footer class="footer section byfooter">
+        <div class="footer__container container grid">
+            
+            <div class="footer__content"><left>
+                <h3 class="footer__title">Our Address</h3>
+               
+
+                <ul class="footer__data address"> 
+                                       
+                    <li class="footer__information">Mettu Street</li>
+                    <li class="footer__information">Kovilpatti</li>
+                    <li class="footer__information">628502</li>
+               
+                   </ul>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">Contact Us</h3>
+
+                <ul class="footer__data">
+                    <li class="footer__information">+91 9360481548</li>
+                    
+                    <div class="footer__social">
+                        <a href="https://www.facebook.com/" class="footer__social-link">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" class="footer__social-link">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="https://twitter.com/" class="footer__social-link">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                    </div>
+                </ul>
+            </div>
+
+            <div class="footer__content">
+                <h3 class="footer__title">
+                    Cash On Delivery Only
+                </h3>
+
+                <div class="footer__cards">
+                    <img src="../assets/img/cod.png" alt="" class="footer__card">
+                    
+                  </div>
+            </div>
+            
+        </div>
+
+        <p class="footer__copy"> &copy;  Mohan R All rigths reserved</p>
+    </footer>
+
+    <a href="#" class="scrollup" id="scroll-up"> 
+        <i class="ri-arrow-up-fill scrollup__icon"></i>
+    </a>
+
+    
+    <script src="../assets/js/main.js"></script> 
+    <script src="../assets/js/scrollreveal.min.js"></script>
+</body>
+</html>

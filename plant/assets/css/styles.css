@@ -1,0 +1,3179 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem; /*56px*/
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --hue: 152;
+  --first-color: hsl(var(--hue), 24%, 32%);
+  --first-color-alt: hsl(var(--hue), 24%, 28%);
+  --first-color-light: hsl(var(--hue), 24%, 66%);
+  --first-color-lighten: hsl(var(--hue), 24%, 92%);
+  --title-color: hsl(var(--hue), 4%, 15%);
+  --text-color: hsl(var(--hue), 4%, 35%);
+  --text-color-light: hsl(var(--hue), 4%, 55%);
+  --body-color: hsl(var(--hue), 0%, 100%);
+  --container-color: #FFF;
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: 'Poppins', sans-serif;
+  --big-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== Margenes Bottom ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --mb-0-5: .5rem;
+  --mb-0-75: .75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 968px) {
+  :root {
+    --big-font-size: 3.5rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body,
+button,
+input,
+textarea{
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body{
+  margin: var(--header-height) 0 0 0;
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: .4s; /*For animation dark mode*/
+}
+
+button{
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+h1,h2,h3{
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== THEME ===============*/
+/*========== Variables Dark theme ==========*/
+body.dark-theme{
+  --first-color-dark: hsl(var(--hue), 8%, 20%);
+  --title-color: hsl(var(--hue), 4%, 95%);
+  --text-color: hsl(var(--hue), 4%, 75%);
+  --body-color: hsl(var(--hue), 8%, 12%);
+  --container-color: hsl(var(--hue), 8%, 16%);
+}
+
+/*========== Button Dark/Light ==========*/
+.change-theme{
+  color: var(--title-color);
+  font-size: 1.15rem;
+  cursor: pointer;
+}
+
+.nav__btns{
+  display: inline-flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+/*========== 
+Color changes in some parts of 
+the website, in dark theme 
+==========*/
+
+.dark-theme .steps__bg,
+.dark-theme .questions{
+  background-color: var(--first-color-dark);
+}
+
+.dark-theme .product__circle,
+.dark-theme .footer__subscribe{
+  background-color: var(--container-color);
+}
+
+.dark-theme .scroll-header{
+  box-shadow: 0 1px 4px hsla(var(--hue), 4%, 4%, .3);
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.section{
+  padding: 5.5rem 0 1rem;
+}
+
+.section__title,
+.section__title-center{
+  font-size: var(--h2-font-size);
+  margin-bottom: var(--mb-2);
+  line-height: 140%;
+}
+
+.section__title-center{
+  text-align: center;
+}
+
+.container{
+  max-width: 968px;
+  margin-left: var(--mb-1-5);
+  margin-right: var(--mb-1-5);
+}
+
+.grid{
+  display: grid;
+}
+
+.main{
+  overflow: hidden; /*For animation*/
+}
+
+/*=============== HEADER ===============*/
+.header{
+  width: 100%;
+  background-color: var(--body-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  transition: .4s; /*For animation dark mode*/
+}
+
+/*=============== NAV ===============*/
+.nav{
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo,
+.nav__toggle,
+.nav__close{
+  color: var(--title-color);
+}
+
+.nav__logo{
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: -1px;
+  display: inline-flex;
+  align-items: center;
+  column-gap: .5rem;
+  transition: .3s;
+}
+
+.nav__logo-icon{
+  font-size: 1.15rem;
+  color: var(--first-color);
+}
+
+.nav__logo:hover{
+  color: var(--first-color);
+}
+
+.nav__toggle{
+  display: inline-flex;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 767px){
+  .nav__menu{
+    position: fixed;
+    background-color: var(--container-color);
+    width: 80%;
+    height: 100%;
+    top: 0;
+    right: -100%;
+    box-shadow: -2px 0 4px hsla(var(--hue), 24%, 15%, .1);
+    padding: 4rem 0 0 3rem;
+    border-radius: 1rem 0 0 1rem;
+    transition: .3s;
+    z-index: var(--z-fixed);
+  }
+}
+
+.nav__close{
+  font-size: 1.5rem;
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  cursor: pointer;
+}
+
+.nav__list{
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+
+.nav__link{
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  transition: .3s;
+}
+
+.nav__link:hover{
+  color: var(--first-color);
+}
+
+/* Show menu */
+.show-menu{
+  right: 0;
+}
+
+/* Change background header */
+.scroll-header{
+  box-shadow: 0 1px 4px hsla(var(--hue), 4%, 15%, .1);
+}
+
+/* Active link */
+.active-link{
+  position: relative;
+  color: var(--first-color);
+}
+
+.active-link::after{
+  content: '';
+  position: absolute;
+  bottom: -.5rem;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background-color: var(--first-color);
+}
+
+/*=============== HOME ===============*/
+.home{
+  padding: 3.5rem 0 2rem;
+}
+
+.home__container{
+  position: relative;
+  row-gap: 2rem;
+}
+
+.home__img{
+  width: 200px;
+  justify-self: center;
+}
+
+.home__title{
+  font-size: var(--big-font-size);
+  line-height: 140%;
+  margin-bottom: var(--mb-1);
+}
+
+.home__description{
+  margin-bottom: var(--mb-2-5);
+}
+
+.home__social{
+  position: absolute;
+  top: 2rem;
+  right: -1rem;
+  display: grid;
+  justify-items: center;
+  row-gap: 3.5rem;
+}
+
+.home__social-follow{
+  font-weight: var(--font-medium);
+  font-size: var(--smaller-font-size);
+  color: var(--first-color);
+  position: relative;
+  transform: rotate(90deg);
+}
+
+.home__social-follow::after{
+  content: '';
+  position: absolute;
+  width: 1rem;
+  height: 2px;
+  background-color: var(--first-color);
+  right: -45%;
+  top: 50%;
+}
+
+.home__social-links{
+  display: inline-flex;
+  flex-direction: column;
+  row-gap: .25rem;
+}
+
+.home__social-link{
+  font-size: 1rem;
+  color: var(--first-color);
+  transition: .3s;
+}
+
+.home__social-link:hover{
+  transform: translateX(.25rem);
+}
+
+/*=============== BUTTONS ===============*/
+.button{
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #FFF;
+  padding: 1rem 1.75rem;
+  border-radius: .5rem;
+  font-weight: var(--font-medium);
+  transition: .3s;
+}
+
+.button:hover{
+  background-color: var(--first-color-alt);
+}
+
+.button__icon{
+  transition: .3s;
+}
+
+.button:hover .button__icon{
+  transform: translateX(.25rem);
+}
+
+.button--flex{
+  display: inline-flex;
+  align-items: center;
+  column-gap: .5rem;
+}
+
+.button--flexx{
+ float:right;
+
+ 
+}
+
+.button--link{
+  color: var(--first-color);
+  font-weight: var(--font-medium);
+}
+
+.button--link:hover .button__icon{
+  transform: translateX(.25rem);
+}
+
+/*=============== ABOUT ===============*/
+.about__container{
+  row-gap: 2rem;
+}
+
+.about__img{
+  width: 280px;
+  justify-self: center;
+}
+
+.about__title{
+  margin-bottom: var(--mb-1);
+}
+
+.about__description{
+  margin-bottom: var(--mb-2);
+}
+
+.about__details{
+  display: grid;
+  row-gap: 1rem;
+  margin-bottom: var(--mb-2-5);
+}
+
+.about__details-description{
+  display: inline-flex;
+  column-gap: .5rem;
+  font-size: var(--small-font-size);
+}
+
+.about__details-icon{
+  font-size: 1rem;
+  color: var(--first-color);
+  margin-top: .15rem;
+}
+
+/*=============== STEPS ===============*/
+.steps__bg{
+  background-color: var(--first-color);
+  padding: 3rem 2rem 2rem;
+  border-radius: 1rem;
+}
+
+.steps__container{
+  gap: 2rem;
+  padding-top: 1rem;
+}
+
+.steps__title{
+  color: #FFF;
+}
+
+.steps__card{
+  background-color: var(--container-color);
+  padding: 2.5rem 3rem 2rem 1.5rem;
+  border-radius: 1rem;
+}
+
+.steps__card-number{
+  display: inline-block;
+  background-color: var(--first-color-alt);
+  color: #FFF;
+  padding: .5rem .75rem;
+  border-radius: .25rem;
+  font-size: var(--h2-font-size);
+  margin-bottom: var(--mb-1-5);
+  transition: .3s;
+}
+
+.steps__card-title{
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-0-5);
+}
+
+.steps__card-description{
+  font-size: var(--small-font-size);
+}
+
+.steps__card:hover .steps__card-number{
+  transform: translateY(-.25rem);
+}
+
+/*=============== PRODUCTS ===============*/
+.product__description{
+  text-align: center;
+}
+
+.product__container{
+  padding: 3rem 0;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem 3rem;
+}
+
+.product__card{
+  display: grid;
+  position: relative;
+}
+
+.product__img{
+  position: relative;
+  width: 100px;
+  justify-self: center;
+  margin-bottom: var(--mb-0-75);
+  transition: .3s;
+}
+
+.product__title,
+.product__price{
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+}
+
+.product__title{
+  margin-bottom: .25rem;
+}
+
+.product__button{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: var(--first-color);
+  color: #FFF;
+  padding: .25rem;
+  border-radius: .35rem;
+  font-size: 1.15rem;
+}
+
+.product__button:hover{
+  background-color: var(--first-color-alt);
+}
+
+.product__circle{
+  width: 90px;
+  height: 90px;
+  background-color: var(--first-color-lighten);
+  border-radius: 50%;
+  position: absolute;
+  top: 18%;
+  left: 5%;
+}
+
+.product__card:hover .product__img{
+  transform: translateY(-.5rem);
+}
+
+/*=============== QUESTIONS ===============*/
+.questions{
+  background-color: var(--first-color-lighten);
+}
+
+.questions__container{
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+}
+
+.questions__group{
+  display: grid;
+  row-gap: 1.5rem;
+}
+
+.questions__item{
+  background-color: var(--container-color);
+  border-radius: .25rem;
+}
+
+.questions__item-title{
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+}
+
+.questions__icon{
+  font-size: 1.25rem;
+  color: var(--title-color);
+}
+
+.questions__description{
+  font-size: var(--smaller-font-size);
+  padding: 0 1.25rem 1.25rem 2.5rem;
+}
+
+.questions__header{
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+  padding: .75rem .5rem;
+  cursor: pointer;
+}
+
+.questions__content{
+  overflow: hidden;
+  height: 0;
+}
+
+.questions__item,
+.questions__header,
+.questions__item-title,
+.questions__icon,
+.questions__description,
+.questions__content{
+  transition: .3s;
+}
+
+.questions__item:hover{
+  box-shadow: 0 2px 8px hsla(var(--hue), 4%, 15%, .15);
+}
+
+/*Rotate icon, change color of titles and background*/
+.accordion-open .questions__header,
+.accordion-open .questions__content{
+  background-color: var(--first-color);
+}
+
+.accordion-open .questions__item-title,
+.accordion-open .questions__description,
+.accordion-open .questions__icon{
+  color: #FFF;
+}
+
+.accordion-open .questions__icon{
+  transform: rotate(45deg);
+}
+
+/*=============== CONTACT ===============*/
+.contact__container{
+  row-gap: 3.5rem;
+}
+
+.contact__data{
+  display: grid;
+  row-gap: 2rem;
+}
+
+.contact__subtitle{
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  color: var(--text-color);
+  margin-bottom: var(--mb-0-5);
+}
+
+.contact__description{
+  display: inline-flex;
+  align-items: center;
+  column-gap: .5rem;
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+.contact__icon{
+  font-size: 1.25rem;
+}
+
+.contact__inputs{
+  display: grid;
+  row-gap: 2rem;
+  margin-bottom: var(--mb-2-5);
+}
+
+.contact__content{
+  position: relative;
+  height: 3rem;
+  --body-color: hsl(var(--hue), 8%, 12%);
+  border-bottom: 1px solid var(--text-color-light);
+}
+
+.contact__input{
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 1rem 1rem 0;
+  background: none;
+
+  color: var(--text-color);
+
+  
+  border: none;
+  outline: none;
+  z-index: 1;
+}
+
+.contact__label{
+  position: absolute;
+  top: .75rem;
+  width: 100%;
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+  transition: .3s;
+}
+
+.contact__area{
+  height: 7rem;
+}
+
+.contact__area textarea{
+  resize: none;
+}
+
+/*Input focus move up label*/
+.contact__input:focus + .contact__label{
+  top: -.75rem;
+  left: 0;
+  font-size: var(--smaller-font-size);
+  z-index: 10;
+}
+
+/*Input focus sticky top label*/
+.contact__input:not(:placeholder-shown).contact__input:not(:focus) + .contact__label{
+  top: -.75rem;
+  font-size: var(--smaller-font-size);
+  z-index: 10;
+}
+
+/*=============== FOOTER ===============*/
+.footer__container{
+  row-gap: 3rem;
+}
+
+.footer__logo{
+  display: inline-flex;
+  align-items: center;
+  column-gap: .5rem;
+  color: var(--title-color);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: var(--mb-2-5);
+  transition: .3s;
+}
+
+.footer__logo-icon{
+  font-size: 1.15rem;
+  color: var(--first-color);
+}
+
+.footer__logo:hover{
+  color: var(--first-color);
+}
+
+.footer__title{
+  font-size:90%;
+  margin-bottom: var(--mb-1-5);
+}
+.footer__title1{
+  font-size:90%;
+  width:100%;
+  margin-bottom: var(--mb-1-5);
+
+}
+.foot_title{
+  padding-left:5%;
+}
+
+.footer__subscribe{
+  background-color: var(--first-color-lighten);
+  padding: .75rem;
+  display: flex;
+  justify-content: space-between;
+  border-radius: .5rem;
+}
+
+.footer__input{
+  width: 70%;
+  padding: 0 .5rem;
+  background: none;
+  color: var(--text-color);
+  border: none;
+  outline: none;
+}
+
+.footer__button{
+  padding: 1rem;
+}
+
+.footer__data{
+  display: grid;
+  row-gap: .75rem;
+  float: left;
+}
+
+.address{
+  justify-content: left;
+  align-items: left;
+  padding-right: 70%;
+  float:left;
+
+}
+.footer__information{
+  font-size: var(--small-font-size);
+  float: left;
+  justify-content: left;
+}
+
+.footer__social{
+  display: inline-flex;
+  column-gap: .75rem;
+}
+
+.footer__social-link{
+  font-size: 1rem;
+  color: var(--text-color);
+  transition: .3s;
+}
+
+.footer__social-link:hover{
+  transform: translateY(-.25rem);
+}
+
+.footer__cards{
+  display: inline-flex;
+  align-items: center;
+  column-gap: 2em;
+  
+}
+
+.footer__card{
+  width: 50%;
+  margin-left: 2%;
+}
+
+
+
+.footer__copy{
+  text-align: center;
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+  margin: 5rem 0 1rem;
+}
+
+/*=============== SCROLL UP ===============*/
+.scrollup{
+  position: fixed;
+  background-color: var(--first-color);
+  right: 1rem;
+  bottom: -30%;
+  display: inline-flex;
+  padding: .5rem;
+  border-radius: .25rem;
+  z-index: var(--z-tooltip);
+  opacity: .8;
+  transition: .4s;
+}
+
+.scrollup__icon{
+  font-size: 1rem;
+  color: #FFF;
+}
+
+.scrollup:hover{
+  background-color: var(--first-color-alt);
+  opacity: 1;
+}
+
+/* Show Scroll Up*/
+.show-scroll{
+  bottom: 3rem;
+}
+
+/*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar{
+  width: .6rem;
+  background: hsl(var(--hue), 4%, 53%);
+}
+
+::-webkit-scrollbar-thumb{
+  background: hsl(var(--hue), 4%, 29%);
+  border-radius: .5rem;
+}
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 320px){
+  .container{
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+  }
+
+  .home__img{
+    width: 180px;
+  }
+  .home__title{
+    font-size: var(--h1-font-size);
+  }
+  
+  .steps__bg{
+    padding: 2rem 1rem;
+  }
+  .steps__card{
+    padding: 1.5rem;
+  }
+
+  .product__container{
+    grid-template-columns: .6fr;
+    justify-content: center;
+  }
+}
+
+
+@media screen and (max-width:575px){
+  .tulasi{
+    width: 80px;
+    height:180px;
+  }
+  .giloy{
+    width: 180px;
+    height:180px;
+  }
+  .alov{
+    width:150px;
+    height:200px;
+  }
+  .carom,
+  .ashwagandha
+  {
+    width:150px;
+    height:180px;
+  }
+  .khus{
+    width:180px;
+    height:180px;
+  }
+  .mint{
+    width: 160px;
+    height:220px;
+  }
+  .turmeric{
+    width: 80px;
+    height:150px;
+  }
+  .peper{
+    width:100px;
+    height:180opx;
+  }
+  .Bosweilla{
+    width: 110px;
+    height: 220px;
+  }
+  .chamomile{
+    width: 180px;
+    height:250px;
+  }
+  .sage{
+    width:150px;
+    height:160px;
+  }
+  .marigold,.rosemary{
+    width:150px;
+    height:180px;
+  }
+  .lemon{
+    width:160px;
+    height:125px;
+  }
+  .fenu{
+    width:180px;
+    height:180px;
+  }
+  .andro{
+    width:100px;
+    height:180px;
+  }
+  .elachi{
+    width:150px;
+    height:180px;
+  }
+  .cathan{
+    width:180px;
+    height:180px;
+  }
+  .gotu{
+    width:180px;
+    height: 190px;
+  }
+
+}
+/* For medium devices */
+@media screen and (min-width: 576px){
+  .steps__container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .tulasi{
+    width:80px;
+    height:180px;
+  }
+  .giloy,
+  .ashwagandha,
+  .khus{
+    width:150px;
+    height:180px;
+  }
+  .mint{
+    width:150px;
+    height:180px;
+  }
+  .rosemary,
+  .marigold{
+    width:180px;
+    height:180px;
+  }
+  .elachi{
+    width:180px;
+    height:180px;
+  }
+  .cathan{
+    width:180px;
+    height:180px;
+  }
+  .andro{
+    width:100px;
+    height:180px;
+  }
+  .fenu{
+    width:180px;
+    height:180px;
+  }
+  .sage{
+    width: 140px;
+    height:150px;
+  }
+  .gotu{
+    width:180px;
+    height:195px;
+  }
+  .turmeric{
+    width:90px;
+    height:180px;
+  }
+  .peper{
+    width:125px;
+    height:180px;
+      }
+  .Bosweilla{
+    width:125px;
+    height:160px;
+  }
+  .chamomile{
+    width:180px;
+    height:180px;
+  }
+  .lemon{
+    width:140px;
+    height:130px;
+  }
+  .alov{
+    width:150px;
+    height:200px;
+  }
+  .carom{
+    width:150px;
+    height:180px;
+  }
+  .product__description{
+    padding: 0 4rem;
+  }
+  .product__container{
+    grid-template-columns: repeat(2, 170px);
+    justify-content: center;
+    column-gap: 5rem;
+  }
+
+  .footer__subscribe{
+    width: 400px;
+  }
+}
+
+
+.prd{
+  justify-content: center;
+  font-weight: 800;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 767px) {
+  body{
+    margin: 0;
+  }
+
+  .nav{
+    height: calc(var(--header-height) + 1.5rem);
+    column-gap: 3rem;
+  }
+  .nav__toggle,
+  .nav__close{
+    display: none;
+  }
+  .nav__list{
+    flex-direction: row;
+    column-gap: 3rem;
+  }
+  .nav__menu{
+    margin-left: auto;
+  }
+
+  .home__container,
+  .about__container,
+  .questions__container,
+  .contact__container,
+  .footer__container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .home{
+    padding: 10rem 0 5rem;
+  }
+  .home__container{
+    align-items: center;
+  }
+  .home__img{
+    width: 280px;
+    order: 1;
+  }
+  .home__social{
+    top: 30%;
+  }
+  .elachi{
+    width:180px;
+    height:180px;
+  }
+  .cathan{
+    width:180px;
+    height:180px;
+  }
+  .alov{
+    width:150px;
+    height:188px;
+  }
+  .rosemary{
+    width:280px;
+    height:180px;
+  }
+  .gotu{
+    width:150px;
+    height:190px;
+  }
+  .andro{
+    height:180px;
+    width:100px;
+  }
+  .Bosweilla{
+    width:100px;
+    height:145px;
+  }
+  .khus{
+    width:100px;
+    width:135px;
+  }
+  .carom{
+    width:200px;
+  }
+  .turmeric{
+    height:180px;
+    width:100px;
+  }
+  .peper{
+    width:125px;
+    height:180px;
+  }
+  .tulasi{
+    width:70px;
+    height:168px;
+  }
+  .questions__container{
+    align-items: flex-start;
+  }
+  .footer__container{
+    column-gap: 3rem;
+  }
+  .footer__subscribe{
+    width: initial;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* For large devices */
+@media screen and (min-width: 992px){
+  .container{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section{
+    padding: 8rem 0 1rem;
+  }
+  .section__title,
+  .section__title-center{
+    font-size: var(--h1-font-size);
+  }
+
+  .home{
+    padding: 13rem 0 5rem;
+  }
+  .home__img{
+    width: 350px;
+  }
+  .home__description{
+    padding-right: 7rem;
+  }
+
+  .about__img{
+    width: 380px;
+  }
+
+  .steps__container{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .steps__bg{
+    padding: 3.5rem 2.5rem;
+  }
+  .steps__card-title{
+    font-size: var(--normal-font-size);
+  }
+
+  .product__description{
+    padding: 0 16rem;
+  }
+  .product__container{
+    padding: 4rem 0;
+    grid-template-columns: repeat(3, 185px);
+    gap: 4rem 6rem;
+  }
+  .product__img{
+    width: 160px;
+  }
+  .sage{
+    width: 160px;
+    height:190px;
+  }
+  .rosemary{
+    width: 500px;
+    height:160px;
+  }
+  .carom{
+    width:200px;
+  }
+  .peper{
+    width:150px;
+    height:195px;
+  }
+  .tulasi{
+    width:80px;
+    height:220px;
+  }
+  .alov{
+    width: 200px;
+    height:190px;
+  }
+  .Bosweilla{
+    width:100px;
+    height:175px;
+  }
+  .elachi{
+    width:180px;
+    height:185px;
+  }
+  .andro{
+    width:100px;
+    height:165px;
+  }
+  .cathan{
+    width:300px;
+  }
+  .khus{
+    width: 500px;
+    height:175px;
+  }
+  .turmeric{
+    width:70px;
+    height:160px;
+  }
+  .chamomile{
+    width:150px;
+    height:195px;
+  }
+  .marigold{
+    width: 125px;
+    height:160px;
+  }
+  .product__circle{
+    width: 110px;
+    height: 110px;
+  }
+  .product__title,
+  .product__price{
+    font-size: var(--normal-font-size);
+  }
+
+  .questions__container{
+    padding: 1rem 0 4rem;
+  }
+  .questions__title{
+    text-align: initial;
+  }
+  .questions__group{
+    row-gap: 2rem;
+  }
+  .questions__header{
+    padding: 1rem;
+  }
+  .questions__description{
+    padding: 0 3.5rem 2.25rem 2.75rem;
+  }
+
+  .footer__logo{
+    font-size: var(--h3-font-size);
+  }
+  .footer__container{
+    grid-template-columns: 1fr .5fr .5fr .5fr;
+  }
+  .footer__copy{
+    margin: 7rem 0 2rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1200px){
+  .home__social{
+    right: -3rem;
+    row-gap: 4.5rem;
+  }
+  .home__social-follow{
+    font-size: var(--small-font-size);
+  }
+  .home__social-follow::after{
+    width: 1.5rem;
+    right: -60%;
+  }
+  .home__social-link{
+    font-size: 1.15rem;
+  }
+
+  .about__container{
+    column-gap: 7rem;
+  }
+
+  .scrollup{
+    right: 3rem;
+  }
+  .turmeric{
+    width: 70px;
+    height:180px;
+  }
+  .andro{
+    width:110px;
+    height:175px;
+  }
+  .peper{
+    width: 50px;
+    height:199px;
+  }
+  .giloy{
+    width:190px;
+    height:220px;
+  }
+  .alov{
+    height:180px;
+    width:160px;
+  }
+  .tulasi{
+    width:70px;
+    height:220px;
+  }
+  
+  .chamomile,.peper{
+    width: 150px;
+  }
+  
+  .cathan{
+    width:145px;
+  }
+  .gotu{
+    width:170px;
+    height:160px;
+  }
+
+  .khus{
+    width:130px;
+  }
+  .rosemary{ 
+    width:149px;
+  }
+  .Bosweilla{
+    width:108px;
+  }
+  .mint{
+    width:180px;
+    height:220px;
+  }
+  
+  .sage{
+    width:250px;
+  
+  }
+  .elachi{
+    width:173px;
+  }
+}
+
+/* To center product and theme header button */
+.prd1{
+  position: absolute;
+  left: 50%;
+ top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+.theme1{
+  position: absolute;
+  left:60%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  padding: 10px;
+}
+/* End of theme amd product center */
+
+
+/* Tulasi Start */
+
+
+.firstimg{
+  padding-top:5%;
+  padding-bottom:0px;
+  padding-left:0px;
+  width:50%;
+  float:left;
+}
+.description1{
+  padding-left:40%;
+  text-decoration: 2px solid #990066 underline;
+  color:forestgreen;
+  text-shadow:0px 1.5px 1.2px deepskyblue;
+  padding-top:10%;
+  padding-right:40%;
+}
+
+.prd1desc{
+  padding-left:35%;
+  padding-top:3%;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  word-spacing: 5px;
+  font-size:130%;
+  color:#eaff2ab0;
+  text-shadow:1px 1px #000;
+}
+.prd1use{
+  padding-left:40%;
+}
+.prd1ul{
+  padding-left:35%;
+  text-decoration: none;;
+}
+.firstfooter{
+  padding-top:10%;
+  padding-left:0px;
+
+}
+
+/* ALign Image and Name and Rupees */
+.name1{
+  padding-top: 60%;
+  width:30%;
+  padding-left:10%;
+  position:relative;
+  color:#ff0033;
+  text-shadow:1px 0px #9933cc;
+  font-family: 'Times New Roman', Times, serif;
+  height:200px;
+} 
+.rupees1{
+  padding-top:82%;
+  color:#4141e4;
+  padding-left:12%;
+  text-shadow:1px 0px black;
+}
+.shoppie{
+  width:50%;
+  padding:0px;
+  padding-left:20px;
+  border: 2px solid #ffffcc;
+  font-size: 12px;
+  border-radius:9px;
+  height:2%;
+}
+.shoppie:hover{
+  background-color:#ffff99;
+  color:#000099;
+  border:2px solid cyan;
+}
+.tulasiimg{
+  width:50%;
+  width:fit-content;
+  line-height:200%;
+  position:absolute;
+  padding-top:10%;
+}
+/* ALign Image and Name and Rupees */
+
+
+/* Tulasi End */
+
+
+/* Giloy Start */
+
+.secondimg{
+  padding-top:5%;
+  padding-bottom:0px;
+  padding-left:0px;
+  width:60%;
+  float:left;
+}
+.description2   {
+  padding-left:40%;
+  text-decoration: 2px solid #990066 underline;
+  color:forestgreen;
+  text-shadow:0px 1.5px 1.2px deepskyblue;
+  padding-top:10%;
+  padding-right:40%;
+
+}
+
+.prd2desc{
+  padding-left:35%;
+  padding-top:3%;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  word-spacing: 5px;
+  font-size:130%;
+  color:#eaff2ab0;
+  text-shadow:1px 1px #000;
+}
+.prd2use{
+  padding-left:40%;
+}
+.prd2ul{
+  padding-left:35%;
+  text-decoration: none;;
+}
+.secondfooter{
+  padding-top:10%;
+  padding-left:0%;
+
+}
+
+/* ALign Image and Name and Rupees */
+.name2{
+  padding-top: 50%;
+  width:40%;
+  padding-bottom:10px;
+  padding-left:22%;
+  position:relative;
+  color:#ff0033;
+  text-shadow:1px 0px #9933cc;
+  font-family: 'Times New Roman', Times, serif;
+  height:200px;
+} 
+.rupees2{
+  padding-top:40%;
+  color:#4141e4;
+  position: relative;
+  padding-left:22%;
+  text-shadow:1px 0px #000;
+}
+.giloyimg{
+  width:50%;
+  width:fit-content;
+  line-height:200%;
+  position:absolute;
+  padding-top:10%;
+}
+.shoppie2{
+  width:25%;
+  padding:0px;
+  margin-left:17%;
+  padding-left:20px;
+  border: 2px solid #ffffcc;
+  line-height:200%;
+  font-size: 12px;
+  border-radius:9px;
+  height:2%;
+}
+.shoppie2:hover{
+  background-color:#ffff99;
+  color:#000099;
+  border:2px solid cyan;
+}
+
+
+/* ALign Image and Name and Rupees */
+
+/* Giloy End */
+
+
+/* Carom Start */
+.thirdimg{
+  padding-top:5%;
+  width:200%;
+  float:left;
+}
+.description{
+  padding-left:40%;
+  text-decoration: 2px solid #990066 underline;
+  color:forestgreen;
+  text-shadow:0px 1.5px 1.2px deepskyblue;
+  padding-top:5%;
+  padding-right:40%;
+
+}
+
+.prd3desc{
+  padding-left:35%;
+  padding-top:3%;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  word-spacing: 5px;
+  font-size:130%;
+  color:#990066;
+}
+.prd3use{
+  padding-left:40%;
+}
+.prd3ul{
+  padding-left:35%;
+  text-decoration: none;;
+}
+.thirdfooter{
+  padding-top:30%;
+  padding-left:5%;
+}
+
+/* ALign Image and Name and Rupees */
+.name3{
+  padding-top: 32%;
+  width:50%;
+  padding-left:25%;
+  position:relative;
+  color:#ff0033;
+  text-shadow:1px 0px #9933cc;
+  font-family: 'Times New Roman', Times, serif;
+  height:200px;
+} 
+.rupees3{
+  padding-top:31%;
+  color:#4141e4;
+  position:relative;
+  padding-left:27%;
+  text-shadow:1px 0px #9933cc;
+
+}
+.caromimg{
+  width:50%;
+  width:fit-content;
+  position:absolute;
+  padding-top:5%;
+}
+.shoppie3{
+  width:60%;
+  height:3%;
+  font-size:14px;
+  line-height:200%;
+  padding-top:5px;
+  padding-bottom:5px;
+  padding-left:14px;
+  text-align: center;
+}
+.shoppie:hover{
+  background-color:#ffff99;
+  color:#000099;
+  border:2px solid cyan;
+}
+
+.carom{
+  margin-left:15%;
+}
+/* ALign Image and Name and Rupees */
+
+/* Carom End */
+
+/* Aloevera Start */
+
+.fourthimg{
+  padding-top:5%;
+  width:50%;
+  height:20%;
+  float:left;
+}
+.description4{
+  padding-left:40%;
+  text-decoration: 2px solid #990066 underline;
+  color:forestgreen;
+  text-shadow:0px 1.5px 1.2px deepskyblue;
+  padding-top:10%;
+  padding-right:40%;
+
+}
+
+.prd4desc{
+  padding-left:35%;
+  padding-top:3%;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  word-spacing: 5px;
+  font-size:130%;
+  color:#990066;
+}
+.prd4use{
+  padding-left:40%;
+}
+.prd4ul{
+  padding-left:35%;
+  text-decoration: none;;
+}
+.fourthfooter{
+  padding-top:30%;
+  padding-left:5%;
+}
+
+/* ALign Image and Name and Rupees */
+.name4{
+  padding-top: 45%;
+  width:50%;
+  padding-left:18%;
+  position:relative;
+  color:#ff0033;
+  text-shadow:1px 0px #9933cc;
+  font-family: 'Times New Roman', Times, serif;
+  height:200px;
+} 
+.rupees4{
+  padding-top:18%;
+  color:#4141e4;
+  position:relative;
+  padding-left:22%;
+  text-shadow:1px 0px #9933cc;
+
+}
+.alovimg{
+  width:50%;
+  width:fit-content;
+  position:absolute;
+  padding-top:5%;
+}
+.shoppie4{
+  width:25%;
+  padding-left:5%;
+  height:40%;
+  font-size:14px;
+  line-height: 200%;
+  margin-left:14%;
+}
+/* ALign Image and Name and Rupees */
+
+
+/* Aloevera End */
+
+
+/* Ashwagandha Start */
+
+.fifthimg{
+  padding-top:5%;
+  width:60%;
+  float:left;
+}
+.description5{
+  padding-left:40%;
+  text-decoration: 2px solid #990066 underline;
+  color:forestgreen;
+  text-shadow:0px 1.5px 1.2px deepskyblue;
+  padding-top:10%;
+  padding-right:40%;
+}
+
+.prd5desc{
+  padding-left:35%;
+  padding-top:3%;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  word-spacing: 5px;
+  font-size:130%;
+  color:#990066;
+}
+.prd5use{
+  padding-left:40%;
+}
+.prd5ul{
+  padding-left:35%;
+  text-decoration: none;;
+}
+.fifthfooter{
+  padding-top:30%;
+  padding-left:5%;
+}
+
+/* ALign Image and Name and Rupees */
+.name5{
+  padding-top: 45%;
+  width:50%;
+  padding-left:13%;
+  position:relative;
+  color:#ff0033;
+  text-shadow:1px 0px #9933cc;
+  font-family: 'Times New Roman', Times, serif;
+  height:200px;
+} 
+.rupees5{
+  padding-top:34%;
+  color:#4141e4;
+  position: relative;
+  padding-left:14%;
+  text-shadow:1px 0px #9933cc;
+}
+.shoppie5{
+  margin-top:1%;
+  width:30%;
+  line-height:200%;
+  margin-left:10%;
+  padding-left:7%; 
+}
+.ashimg{
+  width:50%;
+  width:fit-content;
+  position:absolute;
+  padding-top:5%;
+}
+/* ALign Image and Name and Rupees */
+
+/* Ashwagandha End */
+
+/* Khus Start */
+
+.sixthimg{
+  padding-top:5%;
+  width:70%;
+  height:20%;
+  float:left;
+}
+.description6{
+  padding-left:40%;
+  text-decoration: 2px solid #990066 underline;
+  color:forestgreen;
+  text-shadow:0px 1.5px 1.2px deepskyblue;
+  padding-top:10%;
+  padding-right:40%;
+
+}
+
+.prd6desc{
+  padding-left:35%;
+  padding-top:3%;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  word-spacing: 5px;
+  font-size:130%;
+  color:#990066;
+}
+.prd6use{
+  padding-left:40%;
+}
+.prd6ul{
+  padding-left:35%;
+  text-decoration: none;;
+}
+.sixthfooter{
+  padding-top:30%;
+  padding-left:5%;
+}
+
+/* ALign Image and Name and Rupees */
+.name6{
+  padding-top:50%;
+  margin-top:18%;
+  width:50%;
+  padding-left:30%;
+  position:relative;
+  color:#ff0033;
+  text-shadow:1px 0px #9933cc;
+  font-family: 'Times New Roman', Times, serif;
+  height:200px;
+} 
+.rupees6{
+  padding-top:8%;
+  color:#4141e4;
+  position: relative;
+  padding-left:30%;
+  text-shadow:1px 0px #9933cc;
+
+}
+.khusimg{
+  width:50%;
+  width:fit-content;
+  position:absolute;
+  padding-top:5%;
+  padding-bottom:0;
+  padding-left: 0;
+}
+.shoppie6{
+  width:30%;
+  line-height:200%;
+  padding-left:7%;
+  margin-left:22%;
+  margin-top:1%;
+}
+/* ALign Image and Name and Rupees */
+
+/* Khus End */
+
+/* Mint Start */
+
+.seventhimg{
+  padding-top:5%;
+  width:170%;
+  padding-left:0;
+  padding-right:50%;
+  float:left;
+  padding-bottom:0;
+}
+.description7{
+  padding-left:40%;
+  text-decoration: 2px solid #990066 underline;
+  color:forestgreen;
+  text-shadow:0px 1.5px 1.2px deepskyblue;
+  padding-top:10%;
+  padding-right:40%;
+
+}
+
+.prd7desc{
+  padding-left:35%;
+  padding-top:3%;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  word-spacing: 5px;
+  font-size:130%;
+  color:#990066;
+}
+.prd7use{
+  padding-left:40%;
+}
+.prd7ul{
+  padding-left:35%;
+  text-decoration: none;;
+}
+.seventhfooter{
+  padding-top:20%;
+  padding-left:5%;
+}
+
+/* ALign Image and Name and Rupees */
+.name7{
+  padding-top: 32%;
+  width:50%;
+  padding-left:12%;
+  position:relative;
+  color:#ff0033;
+  text-shadow:1px 0px #9933cc;
+  font-family: 'Times New Roman', Times, serif;
+  height:50px;
+} 
+.rupees7{
+  padding-top:50%;
+  color:#4141e4;
+  position:relative;
+  padding-left:15%;
+  text-shadow:1px 0px #9933cc;
+}
+.mintimg{
+  padding-bottom:0;
+  width:70%;
+  width:fit-content;
+  position:absolute;
+  padding-top:5%;
+}
+.shoppie7{
+  width:40%;
+  margin-top:2%;
+  line-height:200%;
+  padding-left:10%;
+  margin-left:9%;
+
+}
+/* ALign Image and Name and Rupees */
+
+/* Mint End */
+
+/* Sage Start */
+
+.eighthimg{
+  padding-top:5%;
+  padding-left:0px;
+  width:100%;
+  float:left;
+}
+.description8{
+  padding-left:40%;
+  text-decoration: 2px solid #990066 underline;
+  color:forestgreen;
+  text-shadow:0px 1.5px 1.2px deepskyblue;
+  padding-top:10%;
+  padding-right:40%;
+
+}
+
+.prd8desc{
+  padding-left:35%;
+  padding-top:3%;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  word-spacing: 5px;
+  font-size:130%;
+  color:#990066;
+}
+.prd8use{
+  padding-left:40%;
+}
+.prd8ul{
+  padding-left:35%;
+  text-decoration: none;;
+}
+.eighthfooter{
+  padding-top:30%;
+  padding-left:5%;
+}
+
+/* ALign Image and Name and Rupees */
+.name8{
+  padding-top: 110%;
+  padding-bottom:1%;
+  width:50%;
+  padding-left:40%;
+  position:relative;
+  color:#ff0033;
+  text-shadow:1px 0px #9933cc;
+  font-family: 'Times New Roman', Times, serif;
+  height:200px;
+} 
+.rupees8{
+  padding-top:16%;
+  color:#4141e4;
+  position:relative;
+  padding-left:40%;
+  text-shadow:1px 0px #9933cc;
+}
+.sagimg{
+  width:50%;
+  width:fit-content;
+  position:absolute;
+  padding-top:10%;
+}
+.shoppie8{
+  width:60%;
+  line-height: 200%;
+  padding-left:8%;
+  margin-left:25%;
+  font-size:14px;
+}
+/* ALign Image and Name and Rupees */
+
+/* Sage End */
+
+/*Lemon Licorice Start */
+
+
+.ninethimg{
+  padding-top:5%;
+  width:99%;
+  float:left;
+}
+.description9{
+  padding-left:40%;
+  text-decoration: 2px solid #990066 underline;
+  color:forestgreen;
+  text-shadow:0px 1.5px 1.2px deepskyblue;
+  padding-top:10%;
+  padding-right:40%;
+
+}
+
+.prd9desc{
+  padding-left:35%;
+  padding-top:3%;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  word-spacing: 5px;
+  font-size:130%;
+  color:#990066;
+}
+.prd9use{
+  padding-left:40%;
+}
+.prd9ul{
+  padding-left:35%;
+  text-decoration: none;;
+}
+.ninethfooter{
+  padding-top:30%;
+  padding-left:5%;
+}
+
+/* ALign Image and Name and Rupees */
+.name9{
+  padding-top: 110%;
+  width:100%;
+  padding-left:20%;
+  position:relative;
+  color:#ff0033;
+  text-shadow:1px 0px #9933cc;
+  font-family: 'Times New Roman', Times, serif;
+  height:200px;
+} 
+.rupees9{
+  padding-top:20%;
+  color:#4141e4;
+  padding-bottom:5%;
+  position:relative;
+  padding-left:45%;
+  text-shadow:1px 0px #9933cc;
+}
+.lemonimg{
+  width:50%;
+  width:fit-content;
+  position:absolute;
+  padding-top:10%;
+}
+.shoppie9{
+  width:50%;
+  font-size:14px;
+  line-height:200%;
+  padding-left:5%;
+  margin-left:28%;
+}
+/* ALign Image and Name and Rupees */
+
+/*Lemon Licorice End  */
+
+
+/*Gotu Kola Start  */
+
+
+.tenthimg{
+  padding-top:0%;
+  width:90%;
+  float:left;
+}
+.description10{
+  padding-left:40%;
+  text-decoration: 2px solid #990066 underline;
+  color:forestgreen;
+  text-shadow:0px 1.5px 1.2px deepskyblue;
+  padding-top:10%;
+  padding-right:40%;
+
+}
+
+.prd10desc{
+  padding-left:35%;
+  padding-top:3%;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  word-spacing: 5px;
+  font-size:130%;
+  color:#990066;
+}
+.prd10use{
+  padding-left:40%;
+}
+.prd10ul{
+  padding-left:35%;
+  text-decoration: none;;
+}
+.tenthfooter{
+  padding-top:10%;
+  padding-left:5%;
+}
+
+/* ALign Image and Name and Rupees */
+.name10{
+  padding-top: 45%;
+  width:100%;
+  padding-left:30%;
+  position:relative;
+  color:#ff0033;
+  text-shadow:1px 0px #9933cc;
+  font-family: 'Times New Roman', Times, serif;
+  height:200px;
+} 
+.rupees10{
+  padding-top:14%;
+  color:#4141e4;
+  position:relative;
+  padding-left:32%;
+  padding-bottom:1px;
+  text-shadow:1px 0px #9933cc;
+}
+.shoppie10{
+  width:50%;
+  line-height: 200%;
+  font-size:14px;
+  padding-left:8%;
+  margin-left:25%;
+}
+.gotuimg{
+  width:50%;
+  width:fit-content;
+  position:absolute;
+  padding-top:10%;
+}
+/* ALign Image and Name and Rupees */
+
+/*Gotu Kola End */
+
+
+/*Marigold Start */
+
+
+.eleventhimg{
+  padding-top:10%;
+  width:90%;
+  float:left;
+}
+.description11{
+  padding-left:40%;
+  text-decoration: 2px solid #990066 underline;
+  color:forestgreen;
+  text-shadow:0px 1.5px 1.2px deepskyblue;
+  padding-top:10%;
+  padding-right:40%;
+
+}
+
+.prd11desc{
+  padding-left:35%;
+  padding-top:3%;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  word-spacing: 5px;
+  font-size:130%;
+  color:#990066;
+}
+.prd11use{
+  padding-left:40%;
+}
+.prd11ul{
+  padding-left:35%;
+  text-decoration: none;;
+}
+.eleventhfooter{
+  padding-top:15%;
+  padding-left:5%;
+}
+
+/* ALign Image and Name and Rupees */
+.name11{
+  padding-top: 50%;
+  width:50%;
+  padding-left:25%;
+  position:relative;
+  color:#ff0033;
+  text-shadow:1px 0px #9933cc;
+  font-family: 'Times New Roman', Times, serif;
+  height:200px;
+} 
+.rupees11{
+  padding-top:35%;
+  position:relative;
+  color:#4141e4;
+  padding-left:35%;
+  text-shadow:1px 0px #9933cc;
+}
+.shoppie11{
+  width:50%;
+  padding-left:5%;
+  margin-left: 17%;
+  line-height :200%;
+  font-size:14px;
+
+}
+.mariimg{
+  width:50%;
+  width:fit-content;
+  position:absolute;
+  padding-top:8%;
+}
+/* ALign Image and Name and Rupees */
+
+/* Marigold End */
+
+/*Rose Mary Start  */
+
+
+.twelfthimg{
+  padding-top:10%;
+  width:80%;
+  float:left;
+}
+.description12{
+  padding-left:40%;
+  text-decoration: 2px solid #990066 underline;
+  color:forestgreen;
+  text-shadow:0px 1.5px 1.2px deepskyblue;
+  padding-top:10%;
+  padding-right:40%;
+
+}
+
+.prd12desc{
+  padding-left:35%;
+  padding-top:3%;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  word-spacing: 5px;
+  font-size:130%;
+  color:#990066;
+}
+.prd12use{
+  padding-left:40%;
+}
+.prd12ul{
+  padding-left:35%;
+  text-decoration: none;;
+}
+.twelfthfooter{
+  padding-top:10%;
+  padding-left:5%;
+}
+
+/* ALign Image and Name and Rupees */
+.name12{
+  padding-top: 40%;
+  width:50%;
+  padding-left:20%;
+  position:relative;
+  color:#ff0033;
+  text-shadow:1px 0px #9933cc;
+  font-family: 'Times New Roman', Times, serif;
+  height:200px;
+} 
+.rupees12{
+  padding-top:92%;
+  position:relative;
+  color:#4141e4;
+  padding-left:20%;
+  text-shadow:1px 0px #9933cc;
+}
+.shoppie12{
+  width: 50%;
+  line-height:200%;
+  font-size:14px;
+  padding-left:5%;
+  margin-left:15%;
+}
+.rosemaryimg{
+  width:50%;
+  width:fit-content;
+  position:absolute;
+  padding-top:5%;
+}
+/* ALign Image and Name and Rupees */
+
+/*Rose Mary End */
+
+/*Bosweilla Start  */
+
+
+.thirteenthimg{
+  padding-top:10%;
+  width:50%;
+  float:left;
+}
+.description13{
+  padding-left:40%;
+  text-decoration: 2px solid #990066 underline;
+  color:forestgreen;
+  text-shadow:0px 1.5px 1.2px deepskyblue;
+  padding-top:10%;
+  padding-right:40%;
+
+}
+
+.prd13desc{
+  padding-left:35%;
+  padding-top:3%;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  word-spacing: 5px;
+  font-size:130%;
+  color:#990066;
+}
+.prd13use{
+  padding-left:40%;
+}
+.prd13ul{
+  padding-left:35%;
+  text-decoration: none;;
+}
+.thirteenthfooter{
+  padding-top:10%;
+  padding-left:5%;
+}
+
+/* ALign Image and Name and Rupees */
+.name13{
+  padding-top: 45%;
+  width:50%;
+  padding-left:2%;
+  position:relative;
+  color:#ff0033;
+  text-shadow:1px 0px #9933cc;
+  font-family: 'Times New Roman', Times, serif;
+  height:200px;
+} 
+.rupees13{
+  padding-top:37%;
+  color:#4141e4;
+  padding-left:12%;
+  text-shadow:1px 0px #9933cc;
+  position: relative;
+}
+.shoppie13{
+  width:35%;
+  line-height:200%;
+  padding-left :5%;
+  margin-left:0%;
+}
+.bosweimg{
+  width:50%;
+  width:fit-content;
+  position:absolute;
+  padding-top:5%;
+}
+/* ALign Image and Name and Rupees */
+
+/*Bosweilla End */
+
+/*Camo Start  */
+
+
+.fourteenthimg{
+  padding-top:15%;
+  width:180%;
+  float:left;
+}
+.description14{
+  padding-left:40%;
+  text-decoration: 2px solid #990066 underline;
+  color:forestgreen;
+  text-shadow:0px 1.5px 1.2px deepskyblue;
+  padding-top:10%;
+  padding-right:40%;
+
+}
+
+.prd14desc{
+  padding-left:35%;
+  padding-top:3%;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  word-spacing: 5px;
+  font-size:130%;
+  color:#990066;
+}
+.prd14use{
+  padding-left:40%;
+}
+.prd14ul{
+  padding-left:35%;
+  text-decoration: none;;
+}
+.fourteenthfooter{
+  padding-top:10%;
+  padding-left:5%;
+}
+
+/* ALign Image and Name and Rupees */
+.name14{
+  padding-top: 0%;
+  width:50%;
+  padding-left:30%;
+  position:relative;
+  color:#ff0033;
+  text-shadow:1px 0px #9933cc;
+  font-family: 'Times New Roman', Times, serif;
+  height:200px;
+} 
+.rupees14{
+  padding-top:52%;
+  color:#4141e4;
+  position:relative;
+  padding-left:35%;
+  text-shadow:1px 0px #9933cc;
+}
+.shoppie14{
+  width:80%;
+  line-height:200%;
+  margin-left:15%;
+
+}
+.camimg{
+  width:50%;
+  width:fit-content;
+  position:absolute;
+  padding-top:5%;
+}
+/* ALign Image and Name and Rupees */
+
+/*Camo End */
+
+/*Peper Betel Start  */
+
+
+.fifteenthimg{
+  padding-top:10%;
+  width:60%;
+  float:left;
+}
+.description15{
+  padding-left:40%;
+  text-decoration: 2px solid #990066 underline;
+  color:forestgreen;
+  text-shadow:0px 1.5px 1.2px deepskyblue;
+  padding-top:10%;
+  padding-right:40%;
+
+}
+
+.prd15desc{
+  padding-left:35%;
+  padding-top:3%;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  word-spacing: 5px;
+  font-size:130%;
+  color:#990066;
+}
+.prd15use{
+  padding-left:40%;
+}
+.prd15ul{
+  padding-left:35%;
+  text-decoration: none;;
+}
+.fifteenthfooter{
+  padding-top:10%;
+  padding-left:5%;
+}
+
+/* ALign Image and Name and Rupees */
+.name15{
+  padding-top: 105%;
+  width:100%;
+  padding-left:10%;
+  position:relative;
+  color:#ff0033;
+  text-shadow:1px 0px #9933cc;
+  font-family: 'Times New Roman', Times, serif;
+  height:200px;
+} 
+.rupees15{
+  padding-top:12%;
+  position:relative;
+  color:#4141e4;
+  padding-left:12%;
+  text-shadow:1px 0px #9933cc;
+
+}
+.shoppie15{
+  width:50%;
+  line-height:200%;
+  margin-left:4%;
+  padding-left:10%;
+}
+.peperimg{
+  width:50%;
+  width:fit-content;
+  position:absolute;
+  padding-top:5%;
+}
+/* ALign Image and Name and Rupees */
+
+/*Peper Betel End  */
+
+/*Turmeric Start  */
+
+
+.sixteenthimg{
+  padding-top:55%;
+  padding-left:2%;
+  width:50%;
+  float:left;
+}
+.description16{
+  padding-left:40%;
+  text-decoration: 2px solid #990066 underline;
+  color:forestgreen;
+  text-shadow:0px 1.5px 1.2px deepskyblue;
+  padding-top:20%;
+  padding-right:40%;
+
+}
+
+.prd16desc{
+  padding-left:35%;
+  padding-top:3%;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  word-spacing: 5px;
+  font-size:130%;
+  color:#990066;
+}
+.prd16use{
+  padding-left:40%;
+}
+.prd16ul{
+  padding-left:35%;
+  text-decoration: none;;
+}
+.sixteenthfooter{
+  padding-top:10%;
+  padding-left:5%;
+}
+
+/* ALign Image and Name and Rupees */
+.name16{
+  padding-top: 105%;
+  width:50%;
+  padding-left:15%;
+  position:relative;
+  color:#ff0033;
+  text-shadow:1px 0px #9933cc;
+  font-family: 'Times New Roman', Times, serif;
+  height:200px;
+} 
+.rupees16{
+  padding-top:105%;
+  color:#4141e4;
+  position:relative;
+  padding-left:30%;
+  text-shadow:1px 0px #9933cc;
+
+}
+.shoppie16{
+  width:100%;
+  margin-left:0%;
+  padding-left:18%;
+  line-height:200%;
+
+
+}
+.turmeriimg{
+  width:50%;
+  width:fit-content;
+  position:absolute;
+  padding-top:5%;
+}
+.turmericimg{
+  width:80%;
+  position:relative;
+}
+/* ALign Image and Name and Rupees */
+
+/*Turmeric End  */
+
+/*Fenugreek Start  */
+
+
+.seventeenthimg{
+  padding-top:5%;
+  width:50%;
+  padding-left:0;
+  float:left;
+}
+.description17{
+  padding-left:40%;
+  text-decoration: 2px solid #990066 underline;
+  color:forestgreen;
+  text-shadow:0px 1.5px 1.2px deepskyblue;
+  padding-top:20%;
+  padding-right:40%;
+
+}
+
+.prd17desc{
+  padding-left:35%;
+  padding-top:3%;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  word-spacing: 5px;
+  font-size:130%;
+  color:#990066;
+}
+.prd17use{
+  padding-left:40%;
+}
+.prd17ul{
+  padding-left:35%;
+  text-decoration: none;;
+}
+.seventeenthfooter{
+  padding-top:10%;
+  padding-left:5%;
+}
+
+/* ALign Image and Name and Rupees */
+.name17{
+  padding-top: 45%;
+  width:50%;
+  padding-left:15%;
+  position:relative;
+  color:#ff0033;
+  text-shadow:1px 0px #9933cc;
+  font-family: 'Times New Roman', Times, serif;
+  height:200px;
+} 
+.rupees17{
+  padding-top:15%;
+  color:#4141e4;
+  padding-left:18%;
+  position:relative;
+  text-shadow:1px 0px #9933cc;
+
+}
+.shoppie17{
+  width:25%;
+  line-height: 200%;
+  padding-left:5%;
+  margin-left:13%;
+}
+.fenugreekimg{
+  width:50%;
+  width:fit-content;
+  position:absolute;
+  padding-top:10%;
+}
+/* ALign Image and Name and Rupees */
+
+/*Fenugreek End  */
+
+/*Andrographis Start  */
+
+
+.eighteenthimg{
+  padding-top:5%;
+  width:80%;
+  float:left;
+}
+.description18{
+  padding-left:40%;
+  text-decoration: 2px solid #990066 underline;
+  color:forestgreen;
+  text-shadow:0px 1.5px 1.2px deepskyblue;
+  padding-top:10%;
+  padding-right:40%;
+
+}
+
+.prd18desc{
+  padding-left:35%;
+  padding-top:3%;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  word-spacing: 5px;
+  font-size:130%;
+  color:#990066;
+}
+.prd18use{
+  padding-left:40%;
+}
+.prd18ul{
+  padding-left:35%;
+  text-decoration: none;;
+}
+.eighteenthfooter{
+  padding-top:10%;
+  padding-left:5%;
+}
+
+/* ALign Image and Name and Rupees */
+.name18{
+  padding-top: 45%;
+  width:50%;
+  padding-left:15%;
+  position:relative;
+  color:#ff0033;
+  text-shadow:1px 0px #9933cc;
+  font-family: 'Times New Roman', Times, serif;
+  height:200px;
+} 
+.rupees18{
+  padding-top:75%;
+  color:#4141e4;
+  position:relative;
+  padding-left:20%;
+  text-shadow:1px 0px #9933cc;
+
+}
+.shoppie18{
+  width:60%;
+  line-height: 200%;
+  padding-left:10%;
+  margin-left:13%;
+}
+.androimg{
+  width:50%;
+  width:fit-content;
+  position:absolute;
+  padding-top:5%;
+}
+/* ALign Image and Name and Rupees */
+
+/*Andrographis End  */
+
+/*Elachi Start  */
+
+
+.nineteenthimg{
+  padding-top:5%;
+  width:70%;
+  float:left;
+}
+.description19{
+  padding-left:40%;
+  text-decoration: 2px solid #990066 underline;
+  color:forestgreen;
+  text-shadow:0px 1.5px 1.2px deepskyblue;
+  padding-top:10%;
+  padding-right:40%;
+
+}
+
+.prd19desc{
+  padding-left:35%;
+  padding-top:3%;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  word-spacing: 5px;
+  font-size:130%;
+  color:#990066;
+}
+.prd19use{
+  padding-left:40%;
+}
+.prd19ul{
+  padding-left:35%;
+  text-decoration: none;;
+}
+.nineteenthfooter{
+  padding-top:10%;
+  padding-left:5%;
+}
+
+/* ALign Image and Name and Rupees */
+.name19{
+  padding-top: 75%;
+  font-size:20px;
+  width:100%;
+  padding-left:28%;
+  position:relative;
+  color:#ff0033;
+  text-shadow:1px 0px #9933cc;
+  font-family: 'Times New Roman', Times, serif;
+  height:200px;
+} 
+.shoppie19{
+  width:30%;
+  line-height: 200%;
+  padding-left:8%;
+  margin-left:20%;
+}
+.rupees19{
+  padding-top:6%;
+  position:relative;
+  color:#4141e4;
+  padding-left:28%;
+  text-shadow:1px 0px #9933cc;
+
+}
+.elachiimg{
+  width:50%;
+  width:fit-content;
+  position:absolute;
+  padding-left:0;
+  padding-top:5%;
+}
+/* ALign Image and Name and Rupees */
+
+/*Elachi End */
+
+/*Cathantharus Rosesus Start  */
+
+
+.twenteethimg{
+  padding-top:5%;
+  width: 50%;
+  float:left;
+}
+.description20{
+  padding-left:40%;
+  text-decoration: 2px solid #990066 underline;
+  color:forestgreen;
+  text-shadow:0px 1.5px 1.2px deepskyblue;
+  padding-top:10%;
+  padding-right:40%;
+
+}
+
+.prd20desc{
+  padding-left:35%;
+  padding-top:3%;
+  font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  word-spacing: 5px;
+  font-size:130%;
+  color:#990066;
+}
+.prd20use{
+  padding-left:40%;
+}
+.prd20ul{
+  padding-left:35%;
+  text-decoration: none;;
+}
+.twenteethfooter{
+  padding-top:10%;
+  padding-left:5%;
+}
+
+/* ALign Image and Name and Rupees */
+.name20{
+  padding-top: 5%;
+  width:100%;
+  padding-left:0%;
+  position:relative;
+  color:#ff0033;
+  text-shadow:1px 0px #9933cc;
+  font-family: 'Times New Roman', Times, serif;
+  height:200px;
+} 
+.rupees20{
+  padding-top:22%;
+  position:relative;
+  color:#4141e4;
+  padding-left:8%;
+  text-shadow:1px 0px #9933cc;
+}
+.shoppie20{
+  width:50%;
+  margin-top:2%;
+  line-height: 200%;
+  padding-left:12.5%;
+  margin-left:1%;
+}
+.cathaimg{
+  width:50%;
+  width:fit-content;
+  position:absolute;
+  padding-top:5%;
+}
+/* ALign Image and Name and Rupees */
+
+/*Cathantharus Rosesus End  */
+
+
+.minicontainer{
+  max-width:1000px;
+  margin-left: var(--mb-1-5);
+  margin-right:var(--mb-0-1);
+}
+
+.info{
+  padding-left:50%;
+  padding-top:5%;
+
+}
+.submit{
+  background-color: rgb(208, 81, 247);
+  padding:1%;
+  margin-top: 3%;
+  margin-left:15%;
+  border-radius:5px;
+  cursor: pointer;
+  font-weight: 300;
+  width:25%;
+  color:#fff;
+}
+.submit:hover{
+  color:rgb(248, 255, 37);
+  background-color: forestgreen;
+  border:2px solid #9933cc;
+}
+
+.fnam,.addrus,.mbnum,.emil,.stsa,.pincde{
+  width: 42%;
+  padding: 0 .5rem;
+  background: none;
+  padding:1%;
+  border-radius:5px;
+  box-decoration-break: none;
+  border: none;
+  outline: none;
+} 
+.fnam:focus,.addrus:focus,.mbnum:focus,.pincde:focus,.stsa:focus{
+  border: 2px solid skyblue;
+  background-color:#4fff49;
+  border: none;
+  opacity: 50%;
+  font-weight:1000;
+}
+
+input[type="text/letter"], textarea {
+  width:50%;
+  background-color : lightcyan; 
+}
+
+::placeholder { 
+  color:#006400;
+  padding-left:20%;
+  opacity: 1; 
+}
+.buydesc{
+  font-family:'Courier New', Courier, monospace;
+  text-align: center;
+  line-height:150%;
+  margin-left:50%;
+  border:2px solid blue;
+  background-color: #ffffe0;
+  font-size:20px;
+}
+
+
+/* For Carom at " buy3.html " */
+
+.buycar{
+  width:700%;
+  padding-top:3%;
+  padding-bottom:2%;
+  margin-top:50%;
+}
+.carname{
+  padding-top: 5%;
+
+}
+.carrup{
+  padding-top:15%;
+  margin-top:48%;
+}
+
+#carimg{
+  width:15500%;
+
+}
+/* For Carom at " buy3.html " End */
+
+
+/* For SpearMint at " buy7.html " */
+.spearseven{
+  padding-top:25%;
+  width:200%;
+}
+.sevenname{
+  padding-top:5%;
+}
+.sevenrup{
+  padding-top:87%;
+}
+
+/* For SpearMint at " buy7.html " End */
+
+/* For Bosweilla at "buy13.html */
+
+.bosrup{
+  padding-left:5%;
+  padding-top:43%;
+}
+.bossthirt{
+  padding-top:15%;
+}
+/* For Bosweilla at "buy13.html" end */
+
+/* For camo at "buy14.html" */
+
+/* .camoimg{
+  padding-top:65%;
+  width:280%;
+} */
+.camrup{
+  padding-top:55%;
+}
+
+/* For camo at "buy14.html" end*/
+
+/* For peper betel at "buy15.html" */
+.betfifte{
+  padding-top:30%;
+}
+.betname{
+  padding-top:125%;
+}
+/* For peper betel at "buy15.html" end */
+
+/* For Turmeric at "buy16.html"  */
+
+
+.turname{
+  padding-top:100%;
+  position: relative;
+  padding-left:5%;
+}
+.turrup{
+  padding-top:130%;
+  position: relative;
+  padding-left:15%;
+}
+.byfooter16{
+  padding-top:20%;
+  position: relative;
+}
+.namediv16{
+  position:absolute;
+  width:100%;
+}
+.buydec16{
+  margin-top:3%;
+  margin-top:15%;
+  }
+.mbl16{
+  width:70%;
+}
+/* For Turmeric at "buy16.html" end */
+
+/* For Cathanrus Rosesus at "buy20.html" */
+.twentimg{
+  padding-top:15%;
+}
+
+.desci{
+  margin-top:15%;
+  margin-bottom:2%;
+  width:50%;
+  float:right;
+}
+
+.catrup{
+  padding-top:33%;
+}
+
+/* For Cathanrus Rosesus at "buy20.html" end */
