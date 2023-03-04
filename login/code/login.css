@@ -1,0 +1,29 @@
+*{
+    margin:0;
+    padding:0;
+}
+:root{
+    --bgcolor:#8c8ef6;
+}
+body{
+    background: linear-gradient(30deg,#85ffde,#0aff27);
+}
+.container{
+    margin: 5%;
+    border-radius:10px;
+    background-color: var(--bgcolor) ;
+}
+.form,.login,.password{
+    padding: 2%;
+    border-radius: 10px;
+}
+.login,.password{
+    font-size:20px;
+}
+.log{
+    text-align:center;
+    font-size: 30px;
+    font-family:sans;
+    font-weight:bold;
+    text-transform: uppercase;
+}
