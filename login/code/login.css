@@ -18,10 +18,9 @@ body{
 .card{
     background-color: var(--bgcolor) ;
     border-radius:10px;
-    width:396px;
     color:#fff;
     box-shadow: 2px 2px 20px 2px rgba(27, 216, 207, 0.3);
-    ;
+    margin-left:-10%;
 }
 .form,.login,.password,.check,.btn{
     padding: 3%;
@@ -34,7 +33,7 @@ body{
     margin-top:10px;
 }
 .login,.password{
-    font-size:18px;
+    font-size:17px;
     font-family: sans;
     font-style: italic;
 }
@@ -52,6 +51,7 @@ input{
     border-bottom: 2px solid #00bbff;
     outline:none;
     color:#61fff4;
+    width:50%;
     filter:drop-shadow(1px 1px 1px #01b3ff);
     text-align:center;
 }
@@ -64,18 +64,81 @@ input{
 }
 .forgot{
     padding-left:10px;
+    animation:colour1 3s infinite forwards;
+    transition:ease-in-out;
     text-decoration:none;
-    animation:colour 2s infinite;
-    transition: ease-in-out;
+}
+.account{
+    animation:colour2 3s infinite backwards;
+    padding-left:25%;
+    text-decoration:none;
+    transition:ease-in-out;
+}
+.account:hover{
+    color:rgb(255, 213, 0);
+    animation:none;
+
 }
 .forgot:hover{
-    transform:rotate(30deg);
+    color:rgb(255, 213, 0);
+    filter:drop-shadow(1px 1px 1px #000);
 }
-@keyframes colour{
-    from{
-        color:lemonchiffon;
+.lb{
+    margin-left:10%;
+    padding-left:5%;
+}
+.btn{
+    outline:none;
+    border:transparent;
+}
+.sub{
+    margin-left:15%;
+    border:transparent;
+    outline:none;
+    padding-left:5%;
+}
+.lob:hover,.siub:hover{
+    border-radius: 50px;
+    border:transparent;
+    outline:none;
+    background: linear-gradient(75deg,rgb(68, 17, 102,0.5),#375ac3);
+    color:#00fa9a;
+    box-shadow:1px 1px 5px #f5fffa;
+    transform: scale(1.2);
+}
+.lob,.siub{
+    border:transparent;
+    border-radius: 50px;
+    padding:5%;
+    width:100px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+@keyframes colour1{
+    from{color:rgb(251, 244, 183);}
+    to{color:rgb(194, 255, 103);}
+}
+@keyframes colour2{
+    from{color:rgb(194, 255, 103);}
+    to{color:rgb(251, 244, 183);}
+}
+@media screen and (min-width:770px) {
+    .card{margin-left:25%;}
+}
+@media screen and (min-width:550px) {
+    .card{width:396px;}
+}
+@media screen and (max-width:549px) {
+    .card{
+        width:350px;
     }
-    to{
-        color:greenyellow;
+    .box{
+        font-size: 12px;
+        padding:0;
+    }
+    .check{
+        padding:0;
+    }
+    .fogot{
+        padding:0;
     }
 }
