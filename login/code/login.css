@@ -5,7 +5,7 @@
 :root{
     --bgcolor:rgba(255, 255, 255, 0.2);
 }
-body{
+.body{
     background:url(../img/cyberpunk.jpg);
     background-repeat: no-repeat;
 }
@@ -44,7 +44,32 @@ body{
     font-weight:bold;
     text-transform: uppercase;
 }
-input{
+.email,.pass{
+    width:35%;
+}
+.input{
+    border:0;
+    border-radius:20px;
+    background-color: transparent;
+    border-bottom: 2px solid #00bbff;
+    outline:none;
+    color:#61fff4;
+    width:50%;
+    filter:drop-shadow(1px 1px 1px #01b3ff);
+    text-align:center;
+}
+.mail{
+    border:0;
+    border-radius:20px;
+    background-color: transparent;
+    border-bottom: 2px solid #00bbff;
+    outline:none;
+    color:#61fff4;
+    width:50%;
+    filter:drop-shadow(1px 1px 1px #01b3ff);
+    text-align:center;
+}
+.word{
     border:0;
     border-radius:20px;
     background-color: transparent;
@@ -68,6 +93,14 @@ input{
     transition:ease-in-out;
     text-decoration:none;
 }
+.ft,.at{
+    cursor:text;
+    color:#000;
+    text-decoration:none;
+}
+.ft:hover,.at:hover{
+    color:#000;
+}
 .account{
     animation:colour2 3s infinite backwards;
     padding-left:25%;
@@ -76,12 +109,14 @@ input{
 }
 .account:hover{
     color:rgb(255, 213, 0);
+    filter:drop-shadow(1px 1px 1px #000);
     animation:none;
 
 }
 .forgot:hover{
     color:rgb(255, 213, 0);
     filter:drop-shadow(1px 1px 1px #000);
+    animation:none;
 }
 .lb{
     margin-left:10%;
@@ -129,16 +164,20 @@ input{
 }
 @media screen and (max-width:549px) {
     .card{
-        width:350px;
+        width:310px;
     }
     .box{
-        font-size: 12px;
+        font-size: 16px;
         padding:0;
     }
     .check{
         padding:0;
     }
-    .fogot{
-        padding:0;
+    .forgot{
+        font-size:16px;
+        padding-left:0;
+    }
+    .lob{
+        margin-left:-50%;
     }
 }
