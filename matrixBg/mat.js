@@ -5,15 +5,15 @@ c.width = window.innerWidth;
 var matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%";
 matrix = matrix.split("");
 var font_size = 10;
-var columns = c.width / font_size; 
+var columns = c.width / font_size;  
 var drops = [];
 for(var x = 0; x < columns; x++)
     drops[x] = 1; 
 function draw()
 {
-    ctx.fillStyle = "rgba(0, 0, 0, 0.4)";
+    ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
     ctx.fillRect(0, 0, c.width, c.height);
-    ctx.fillStyle = "aqua";
+    ctx.fillStyle = "aqua"; 
     ctx.font = font_size + "px cambria";
     for( var i = 0; i < drops.length; i++ )
     {
@@ -25,16 +25,3 @@ function draw()
     }
 }
 setInterval( draw, 35 );
-
-
-
-
-
-
-
-
-
-
-
-
-
