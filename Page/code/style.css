@@ -58,6 +58,9 @@ a:hover{
 .form,.login,.password,.check{
     padding: 3%;
 }
+.login,.password{
+    margin-left:15%;
+}
 
 .log{
     background-color: transparent;
@@ -90,12 +93,15 @@ input{
     border:0;
     border-radius:20px;
     background-color: transparent;
-    border-bottom: 2px solid #00bbff;
+    border-bottom: 2px solid #0bf;
     outline:none;
-    color:#61fff4;
     width:70%;
-    filter:drop-shadow(1px 1px 1px #01b3ff);
+    filter:drop-shadow(1px 1px #f7f7f7);
     text-align:center;
+}
+::placeholder{
+    color:#0fb;
+    opacity:0.5;
 }
 .box{
     font-family: serif;
