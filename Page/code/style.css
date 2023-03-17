@@ -40,6 +40,7 @@ a:hover{
     border-radius:10px;
     justify-content: center;
     align-items: center;
+    margin-left:40%;
 }
 .card,.card1,.card2{
     background-color: var(--bgcolor) ;

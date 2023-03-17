@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(".sign").click(function(){
-        $(".card").show(1000);
+        $(".card").toggle(1000);
         $(".card1").hide();
         $(".card2").hide();
 
