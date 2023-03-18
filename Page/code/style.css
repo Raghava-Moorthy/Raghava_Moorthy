@@ -228,5 +228,13 @@ input{
         width:100%;
         margin-left:0;
     }
-
+    .card,.card{
+        width:100%;
+    }
+    .cb{
+        margin-left:0%;
+    }
+    .already{
+        margin-left:-10%;
+    }
 }
