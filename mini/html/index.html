@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>HMS</title>
+    <link rel="icon" type="image/png" href="../img/plus.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
+</head>
+<body>
+    <div class="container1">
+        <div class="outerBg">
+            <p class="hms">hospital management <br />  system</p>
+        </div>
+
+        <div class="mini">
+            <div class="cross1"></div>
+            <div class="cross2"></div>
+        </div>
+    </div>
+
+    <div class="hider"></div>
+    
+    <div class="d-flex justify-content-center ">
+        <div class="formcontainer" id="formcontainer">
+            <div class="card1 mx-auto ">
+                    <div class="rhead r">
+                        <label for="heading">LOGIN</label>
+                    </div>
+                <form action="" id = "loged" class="rform"  autocomplete="off">
+                    <div class="rid">
+                        <input type="text" required  name="r_id" placeholder="Your Id" class="r_id" id="r_id" >
+                    </div>
+                    <div class="rpass">
+                        <input type="password" required name="r_pass" placeholder="Your password" class="r_pass" id="r_pass">
+                    </div>
+                    <div class="w-75 d-flex justify-content-center">
+                        <input type="submit" value="enter" class="enter" id="enter">
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="d-flex justify-content-center w-100">
+            <a href="#formcontainer" name="lout" class="lout">Logout</a>
+        </div>
+
+        <div class="formcontainer1 w-50" id="formcontainer1">
+            <div class="card1 c mx-auto ">    
+                <div class="rhead h">
+                    <label for="heading">SELECT</label>
+                </div>
+                <div class="d-flex w-100" >
+                    <a href="#" name="admit" class="admit" id="admit">Admission</a>
+                </div>
+                <div class="d-flex w-100" >
+                    <a href="#" name="disc" class="dis">Discharge</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
