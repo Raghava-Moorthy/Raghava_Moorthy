@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>HMS</title>
+    <link rel="icon" type="image/png" href="../img/plus.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
+</head>
+<body>
+    <div class="container1">
+        <div class="outerBg">
+            <p class="hms">hospital management <br />  system</p>
+        </div>
+
+        <div class="mini">
+            <div class="cross1"></div>
+            <div class="cross2"></div>
+        </div>
+    </div>
+
+    <div class="hider"></div>
+    
+    <div class="d-flex justify-content-center ">
+        <div class="formcontainer" id="formcontainer">
+            <div class="card1 mx-auto ">
+                    <div class="rhead r">
+                        <label for="heading">LOGIN</label>
+                    </div>
+                <form action="../php/login.php" method="post"  id = "loged" class="rform"  autocomplete="off">
+                    <div class="rid">
+                        <input type="text" required  name="r_id" placeholder="Your Id" class="r_id reid" id="r_id" >
+                    </div>
+                    <div class="rpass">
+                        <input type="password" required name="r_pass" placeholder="Your password" class="r_pass" id="r_pass">
+                    </div>
+                    <div class="w-75 d-flex justify-content-center">
+                        <input type="submit" value="enter" class="enter" id="enter">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div> 
+    
+</body>
+</html>
