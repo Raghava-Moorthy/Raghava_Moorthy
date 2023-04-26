@@ -45,7 +45,30 @@ $(document).ready(function(){
         $("#ads").fadeIn(5000);
     });
     
+    $(".adout").click(function(){
+        $('body').fadeOut(1000,function(){
+            window.location.href = "../html/admission.html";
+        });
+    });
+
+    $(window).on('load',function(){
+        $("#ads").fadeIn(5000);
+    });
+    
+
+
     $(".dis").click(function(){
+        $('body').fadeOut(1000,function(){
+            window.location.href = "../html/discharge.html";
+        });
+    });
+    $(window).on('load',function(){
+        $("#disch").fadeIn(5000);
+    });
+
+
+
+    $(".disk").click(function(){
         $('body').fadeOut(1000,function(){
             window.location.href = "../html/discharge.html";
         });
@@ -64,7 +87,25 @@ $(document).ready(function(){
         $(".di_report").fadeIn(5000);
     });
 
+    $(".back").click(function(){
+        $('body').fadeOut(1000,function(){
+            window.location.href = "../php/discreport.php";
+        });
+    });
+    $(window).on('load',function(){
+        $(".di_report").fadeIn(5000);
+    });
+
     $(".adrep").click(function(){
+        $('body').fadeOut(1000,function(){
+            window.location.href = "../php/adreport.php";
+        });
+    });
+    $(window).on('load',function(){
+        $(".ad_report").fadeIn(5000);
+    });
+
+    $(".bck").click(function(){
         $('body').fadeOut(1000,function(){
             window.location.href = "../php/adreport.php";
         });

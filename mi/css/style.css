@@ -451,3 +451,25 @@ a:hover{
     background-position:center;
     background-repeat:no-repeat;
 }
+.disk,.adout{
+    background-color:rgba(194, 9, 9, 0.6);
+    width:10%;
+    font-weight: 600;
+    margin-left:185%;
+    color:rgb(255, 255, 255) ;
+    margin-top:43%;
+    position: absolute;
+    border-radius:25px;
+    text-decoration: none;
+    line-height:2;
+    text-align: center;
+    border:none;
+    font-family: serif;
+    font-size: 20px;
+    z-index: 1;
+}
+.disk:hover,
+.adout:hover{
+    color:#fff;
+    scale:1.2;
+}
