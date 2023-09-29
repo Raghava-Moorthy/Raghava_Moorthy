@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../__css/bootstrap.min.css">
+    <link rel="stylesheet" href="../__css/style.css">
+    <script src="../__control/script.js"></script>
+    <title>FMS</title>
+</head>
+<body class="b1 regBody">
+    <img src="../__img/reg.jpg" alt="" class="r-img">
+    <div class="container cc1">
+        <div class="card3">
+            <h2 class="card-header log">Login</h2>
+            <form action="/new_test/log" class="form" id="logForm" method="post">
+                <div class="login">
+                    <label for="">Email<sup>*</sup></label><br>
+                    <input required type="email" name="email"  class="mail" placeholder="Email" id="mail">
+                    <p id="emilerror"></p>
+                </div>
+                
+                <div class="password">
+                    <label for="">Password <sup>*</sup></label><br>
+                    <input required type="password" name="pass" class="word" placeholder="Password" id="pswd">
+                    <p id="paserror"></p>
+                </div>
+
+                <div class="total">
+                    <p id="allError"></p>
+                </div>
+                
+                <div class="check">
+                    <label for="" class="box">
+                        <a href="forgot.html" class="forgot">forgot password?</a>
+                    </label>
+                </div>
+                
+                <div>
+                        <button class="lob" type="submit" onclick="log(event)">Login</button>
+                </div>
+            <div class="already">
+                <p class="da">Don't have a account?
+                    <a href="reg.html" class="account si">Signup</a>
+                </p>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const error = urlParams.get('error');
+
+        if (error === 'invalid') {
+            var x = document.getElementById('allError');
+            x.innerText = 'Invalid Login Email/Password';
+            x.style.color = '#fbff00';
+            x.style.fontSize = '16px';
+            x.style.paddingLeft = '10%';
+        }
+    });
+</script>
+
+</body>
+</html>

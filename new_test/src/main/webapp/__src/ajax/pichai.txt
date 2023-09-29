@@ -1,0 +1,7 @@
+<center>
+<h1>Sundar Pichai</h1> 
+<p>Pichai Sundararajan, better known as Sundar Pichai, is an Indian-American business executive.</p> 
+<p>He is the chief executive officer of Alphabet Inc. and its subsidiary Google.</p> 
+<p>Born in Madras, India, Pichai earned his degree from IIT Kharagpur in metallurgical engineering.</p> 
+<img src = "pichai.jpg" width="200" height="200">
+</center>

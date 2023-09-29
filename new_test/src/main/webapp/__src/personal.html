@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../__css/bootstrap.min.css">
+  <link rel="stylesheet" href="../__css/style.css">
+  <title>FMS</title>
+</head>
+
+<body class="b1">
+  <div class="total__controller">
+    <div class="container-modal">
+      <img src="../__img/vehicle.jpg" alt="Gas Station" class="toWheel">
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Select Vehicle</h4>
+            </div>
+            <div class="modal-body text-center">
+              <div class="row">
+                <div class="col-xs-7">
+                  <div class="radio">
+                    <label><input type="radio" class="rad" name="vehicleType" value="two-Wheeler"
+                        data-fuel-type="Petrol">Bikes</label>
+                  </div>
+                </div>
+                <div class="col-xs-7">
+                  <div class="radio">
+                    <label><input type="radio" class="rad" name="vehicleType" value="three-Wheeler">Cars</label>
+                  </div>
+                </div>
+                <div class="col-xs-7">
+                  <div class="radio">
+                    <label><input type="radio" class="rad" name="vehicleType" value="truck-Wheeler">Truck</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function () {
+      $("#myModal").modal({
+        backdrop: 'static',
+        keyboard: false
+      });
+
+      $(".Two__Wheeler").hide();
+      $(".Cars").hide();
+      $(".Truck").hide();
+      $(".one__for__all").hide();
+
+      $('input[name="vehicleType"]').on('change', function () {
+        var select = $(this).val();
+        var defaultFuelType = $(this).data('fuel-type');
+
+        if (select === "two-Wheeler") {
+          window.open("bike.html","_self");
+        }
+        else if (select === "three-Wheeler") {
+          window.open("car.html","_self");
+         
+        }
+        else if (select === "truck-Wheeler") {
+          window.open("Truck.html","_self");
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
