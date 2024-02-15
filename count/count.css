@@ -1,18 +1,33 @@
 h1{
     color:#ff0000;
-    margin-top:5%;
+    margin-top:2%;
 }
 h4{
     color:#00ffff;
     font-size: 25px;
 }
 body{
-    text-align:center;
     background-color:#000;
+
 }
-#btn{
-    width:20%;
-    height:5vh;
+.container{
+    text-align:center;
+    width:100%;
+    height:auto;
+    position: relative;
+}
+.btns{
+    width:50%;
+    height:auto;
+    margin-left: -5%;
+    display: inline-block;
+    position: absolute;
+    justify-content: center;
+    place-items:center;
+}
+.btn{
+    width:200px;
+    height:8vh;
     font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
     text-transform: capitalize;
@@ -20,4 +35,15 @@ body{
     color:blueviolet;
     background-color:#48ff8b;
     cursor:pointer;
+    margin-top:5%;
+    display: block;
+
+}
+.note{
+    display: inline;
+}
+.saved{
+    position: absolute;
+    bottom: 2%;
+    left: 5%; 
 }
